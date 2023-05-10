@@ -1,6 +1,3 @@
-public enum Action {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
+public interface Action {
+    public Etat action(Etat e);
 }

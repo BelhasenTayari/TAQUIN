@@ -1,3 +1,14 @@
-public class Bas {
+public class Bas implements Action {
+
+    @Override
+    public Etat action(Etat e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'action'");
+    }
+
+    @Override
+    public String toString() {
+        return "Bas";
+    }
 
 }

@@ -22,4 +22,9 @@ public class Node {
         return parent;
     }
 
+    @Override
+    public String toString() {
+        return "Node [action=" + action + "]";
+    }
+
 }

@@ -64,4 +64,38 @@ public class Etat {
     public int hashCode() {
         return Arrays.deepHashCode(this.board);
     }
+
+    @Override
+    public String toString() {
+        String result = "Etat\n";
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                result += board[i][j] + " ";
+            }
+            result += "\n";
+        }
+        return result;
+
+    }
+
+    public void setBoard(int[][] board) {
+        this.board = board;
+    }
+
+    public int getBlankRow() {
+        return blankRow;
+    }
+
+    public void setBlankRow(int blankRow) {
+        this.blankRow = blankRow;
+    }
+
+    public int getBlankCol() {
+        return blankCol;
+    }
+
+    public void setBlankCol(int blankCol) {
+        this.blankCol = blankCol;
+    }
+
 }
