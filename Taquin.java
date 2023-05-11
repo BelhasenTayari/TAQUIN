@@ -10,7 +10,7 @@ public class Taquin {
 
     public List<Etat> rechercheParProfondeur(Etat initialState) {
         Stack<Node> frontier = new Stack<>();
-        Set<Etat> explored = new HashSet<>();
+        Set<Etat> visited = new HashSet<>();
 
         frontier.push(new Node(initialState, null, null));
 
@@ -22,13 +22,14 @@ public class Taquin {
                 return getPath(node);
             }
 
+            visited.add(state);
+
             for (Etat successor : state.getSuccessors()) {
-                if (!explored.contains(successor)) {
-                    Action nextAction = getAction(state, successor);
-                    frontier.push(new Node(successor, node, nextAction));
+                if (!visited.contains(successor)) {
+                    Action action = getAction(state, successor);
+                    frontier.push(new Node(successor, node, action));
                 }
             }
-            explored.add(state);
         }
 
         return null;
